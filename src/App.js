@@ -21,11 +21,6 @@ function App(props) {
                     <Login />
                 )
             }} />
-            <Route exact path='/delete' render = {(props) => {
-                return (
-                    <Login />
-                )
-            }} />
             <Route path='/message' render = {(props) => {
                 return (
                     <ShowMessage />
