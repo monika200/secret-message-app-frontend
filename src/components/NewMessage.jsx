@@ -13,6 +13,9 @@ const NewMessage = () => {
   useEffect(() => {
     setRandomString(Math.random().toString(36).substring(5).toUpperCase());
     setRootUrl(`${window.location.href}message/`);
+    if(localStorage.getItem('UWT')){
+      history.push('/dummy');
+    }
   }, []);
 
   useEffect(() => {

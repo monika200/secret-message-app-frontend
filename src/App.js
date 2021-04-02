@@ -4,6 +4,7 @@ import NewMessage from './components/NewMessage'
 import Login from './components/DeleteMessage'
 import ShowMessage from './components/ShowMessage'
 import './App.css';
+import Dummy from './components/ShowMessage';
 
 function App(props) {
 
@@ -28,6 +29,11 @@ function App(props) {
             <Route path='/message' render = {(props) => {
                 return (
                     <ShowMessage />
+                )
+            }} />
+            <Route path='/dummy' render = {(props) => {
+                return (
+                    <Dummy />
                 )
             }} />
         </Switch>

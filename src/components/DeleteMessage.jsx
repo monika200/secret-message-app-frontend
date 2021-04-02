@@ -32,6 +32,7 @@ const DeleteMessage = () => {
         })
         .then((res) => res.json())
         .then((res) => {
+            localStorage.setItem("UWT", res.token);
             setResponse(res.message);
             setBtnDisable(true)
         })
