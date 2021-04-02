@@ -37,7 +37,7 @@ const NewMessage = () => {
         password: password,
         message: message,
         targetMail: targetMail,
-        targetURL: rootUrl
+        targetUrl: rootUrl
       })
     }).then((res) => res.json())
     .then((res) => history.go(0));
