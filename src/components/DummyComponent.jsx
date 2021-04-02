@@ -23,6 +23,10 @@ if(localStorage.getItem('UWT')){
         <div>
           <h1>The user is being validated through token</h1>
           <h3>The secret Key is {token}</h3>
+          <button type="button" class="btn btn-danger" onClick={() =>{
+localStorage.clear();
+history.pushState('/')
+          }}>Logout</button>
         </div>
     )
 }
