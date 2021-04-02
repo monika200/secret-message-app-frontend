@@ -24,7 +24,7 @@ const NewMessage = () => {
   }, [randomString, password, message, targetMail, rootUrl])
 
   const handleMessageSubmit = () => {
-    fetch('https://secret-messaging.herokuapp.com//create-message', {
+    fetch('http://secret-messag.herokuapp.com/create-message', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -41,9 +41,9 @@ const NewMessage = () => {
   }
 
   return (
-    <div className="App container mt-4">
+    <div className="App container mt-4 bg-primary">
       <div>
-        <h1 className="mt-2 mb-3 d-inline-block">SECRET MESSAGING APP</h1>
+        <h1 className="mt-2 mb-3 d-inline-block">WELCOME TO THE SECRET MESSAGING APP</h1>
         <button className="btn btn-danger float-right mt-3" onClick={() => {
           history.push('/delete')
         }}>Delete A Message</button>
@@ -107,7 +107,7 @@ const NewMessage = () => {
         onChange={(e) => setRootUrl(e.target.value)}
         placeholder="Enter the url for message"
       />
-      <button type="button" disabled={buttonHidden} className="btn btn-primary mt-3 mb-3" onClick={handleMessageSubmit}>
+      <button type="button" class="bg-light" disabled={buttonHidden} className="btn btn-primary mt-3 mb-3" onClick={handleMessageSubmit}>
         Send
       </button>
     </div>

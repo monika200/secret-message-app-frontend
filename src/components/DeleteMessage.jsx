@@ -20,7 +20,7 @@ const DeleteMessage = () => {
 
 
     const handleDeleteMessage = () => {
-        fetch('https://secret-messaging.herokuapp.com//delete-message', {
+        fetch('http://secret-messag.herokuapp.com/delete-message', {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
