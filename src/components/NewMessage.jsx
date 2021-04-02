@@ -24,7 +24,7 @@ const NewMessage = () => {
   }, [randomString, password, message, targetMail, rootUrl])
 
   const handleMessageSubmit = () => {
-    fetch('http://secret-messag.herokuapp.com/create-message', {
+    fetch('http://secret-messaging.herokuapp.com/create-message', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

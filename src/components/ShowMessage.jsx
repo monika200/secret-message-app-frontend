@@ -17,7 +17,7 @@ const ShowMessage = () => {
 
     useEffect(() => {
         if(id?.length > 0){
-            fetch(`http://secret-messag.herokuapp.com/message-by-id/${id}`)
+            fetch(`http://secret-messaging.herokuapp.com/message-by-id/${id}`)
             .then((res) => res.json())
             .then((res) => {
                 setMessage(res.result[0]?.message);
