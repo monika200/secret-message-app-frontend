@@ -71,4 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Deployment URL:
 
-https://secret-message-frontend.netlify.app/
+https://secret-messaging.netlify.app/
