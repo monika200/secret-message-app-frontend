@@ -1,4 +1,4 @@
-[LIVEDEMO}(https://secret-messaging.netlify.app/)
+[LIVEDEMO](https://secret-messaging.netlify.app/)
 
 # Getting Started with Create React App
 
