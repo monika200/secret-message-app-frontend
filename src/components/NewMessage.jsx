@@ -13,9 +13,13 @@ const NewMessage = () => {
   useEffect(() => {
     setRandomString(Math.random().toString(36).substring(5).toUpperCase());
     setRootUrl(`${window.location.href}message/`);
-    if(localStorage.getItem('UWT')){
-      history.push('/dummy');
-    }
+    // console.log(window);
+    // console.log(window.location);
+    // console.log(window.history);
+    // if(localStorage.getItem('UWT')){
+    //   history.push('/dummy');
+
+    // }
   }, []);
 
   useEffect(() => {
@@ -44,9 +48,10 @@ const NewMessage = () => {
   }
 
   return (
-    <div className="App container mt-4 bg-primary">
+    <div className="App container heading mt-4 bg-info">
       <div>
-        <h1 className="mt-2 mb-3 d-inline-block">WELCOME TO THE SECRET MESSAGING APP</h1>
+        <h3 className="mt-2 mb-3 d-inline-block">WELCOME TO THE SECRET MESSAGING APP</h3><i className='fas fa-envelope-open-text'></i>
+        <p className="uppercase">Want to send a secret message then fill the below form</p>
         <button className="btn btn-danger float-right mt-3" onClick={() => {
           history.push('/delete')
         }}>Delete A Message</button>
@@ -110,7 +115,7 @@ const NewMessage = () => {
         onChange={(e) => setRootUrl(e.target.value)}
         placeholder="Enter the url for message"
       />
-      <button type="button" class="bg-light" disabled={buttonHidden} className="btn btn-primary mt-3 mb-3" onClick={handleMessageSubmit}>
+      <button type="button" class="bg-light" disabled={buttonHidden} className="btn btn-success mt-3 mb-3" onClick={handleMessageSubmit}>
         Send
       </button>
     </div>

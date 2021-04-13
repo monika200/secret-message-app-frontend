@@ -20,7 +20,7 @@ const DeleteMessage = () => {
 
 
     const handleDeleteMessage = () => {
-        fetch('https://secret-messaging.herokuapp.com/delete-message', {
+        fetch(`https://secret-messaging.herokuapp.com/delete-message`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const DeleteMessage = () => {
     }
 
     return(
-        <div className="container mt-4">
+        <div className="container bg-secondary mt-4">
             <div>
                 <h1 className="mb-5 d-inline-block">Delete Message</h1>
                 <button className="btn btn-primary float-right mt-3" onClick={() => {

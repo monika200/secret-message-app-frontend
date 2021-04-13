@@ -20,7 +20,9 @@ const ShowMessage = () => {
             fetch(`https://secret-messaging.herokuapp.com/message-by-id/${id}`)
             .then((res) => res.json())
             .then((res) => {
-                setMessage(res.result[0]?.message);
+                console.log(res);
+                setMessage(res.result[0]);
+                console.log(res.result);
                 setPageLoaded(true)
             })
             
@@ -58,3 +60,5 @@ const ShowMessage = () => {
 }
 
 export default ShowMessage;
+
+

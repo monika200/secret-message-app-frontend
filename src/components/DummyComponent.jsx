@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom';
 const Dummy = () => {
+    const history = {useHistory}
     const [token, setToken] = useState('')
     useEffect(() => {
 if(localStorage.getItem('UWT')){
-    fetch('https://localhost:3000/validate-token',{
+    fetch('https://secret-messaging.herokuapp.com/validate-token',{
         method:'POST',
         headers:{
             'Authorization':localStorage.getItem('UWT'),
         }
     }).then((res) => res.json())
     .then((res) => {
+        console.log(res)
         setToken(res.key)
     })
     .catch((error) => {
        console.log(error) 
-       history.pushState('/')
+       history.push('/')
     })
     }
     },[])
@@ -25,7 +27,7 @@ if(localStorage.getItem('UWT')){
           <h3>The secret Key is {token}</h3>
           <button type="button" class="btn btn-danger" onClick={() =>{
 localStorage.clear();
-history.pushState('/')
+history.push('/')
           }}>Logout</button>
         </div>
     )

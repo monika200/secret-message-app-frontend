@@ -4,7 +4,7 @@ import NewMessage from './components/NewMessage'
 import Login from './components/DeleteMessage'
 import ShowMessage from './components/ShowMessage'
 import './App.css';
-import Dummy from './components/ShowMessage';
+import Dummy from './components/DummyComponent';
 
 function App(props) {
 
