@@ -32,18 +32,22 @@ const DeleteMessage = () => {
         })
         .then((res) => res.json())
         .then((res) => {
+            console.log(res);
             localStorage.setItem("UWT", res.token);
+            console.log(res.token);
             setResponse(res.message);
             setBtnDisable(true)
+  
+         
         })
     }
 
     return(
-        <div className="container bg-secondary mt-4">
+        <div className="container bg-danger mt-4 heading">
             <div>
                 <h1 className="mb-5 d-inline-block">Delete Message</h1>
                 <button className="btn btn-primary float-right mt-3" onClick={() => {
-                    history.push('/')
+                    history.replace('/')
                 }}>Back</button>
             </div>
             <label htmlFor="key">Secret Key : </label>
@@ -51,7 +55,7 @@ const DeleteMessage = () => {
             <label htmlFor="pwd">Password : </label>
             <input type="password" className="input-group" id="pwd" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
             {response.length > 0 && <h5 className="mt-2 mb-4">Message : {response}</h5>}
-            <button className="btn btn-danger" disabled={btnDisable} onClick={handleDeleteMessage}>Delete</button>
+            <button className="btn btn-success mt-3 mb-3" disabled={btnDisable} onClick={handleDeleteMessage}>Delete</button>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory} from 'react-router-dom';
 const Dummy = () => {
-    const history = {useHistory}
+    const history = useHistory();
     const [token, setToken] = useState('')
     useEffect(() => {
 if(localStorage.getItem('UWT')){
@@ -9,6 +9,7 @@ if(localStorage.getItem('UWT')){
         method:'POST',
         headers:{
             'Authorization':localStorage.getItem('UWT'),
+            'Content-Type' : 'application/json'
         }
     }).then((res) => res.json())
     .then((res) => {
@@ -17,18 +18,17 @@ if(localStorage.getItem('UWT')){
     })
     .catch((error) => {
        console.log(error) 
-       history.push('/')
     })
     }
     },[])
     return(
-        <div>
-          <h1>The user is being validated through token</h1>
-          <h3>The secret Key is {token}</h3>
-          <button type="button" class="btn btn-danger" onClick={() =>{
-localStorage.clear();
-history.push('/')
-          }}>Logout</button>
+        <div className="container mt-3 text-center text bg-primary">
+          <h1 className="mt-2 mb-3 d-inline-block">The user is being validated through token</h1>
+          <h3 >The secret Key is {token}</h3>
+         {<button type="button" class="btn btn-success" onClick={() =>{
+ localStorage.clear()
+ history.push('/')
+          }}>Logout</button>}
         </div>
     )
 }

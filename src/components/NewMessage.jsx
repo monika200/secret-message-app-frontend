@@ -16,10 +16,11 @@ const NewMessage = () => {
     // console.log(window);
     // console.log(window.location);
     // console.log(window.history);
-    // if(localStorage.getItem('UWT')){
-    //   history.push('/dummy');
-
-    // }
+      if(localStorage.getItem('UWT')){
+                history.push('/dummy');
+           
+              }
+  
   }, []);
 
   useEffect(() => {

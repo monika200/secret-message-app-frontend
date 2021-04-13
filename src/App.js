@@ -1,10 +1,11 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NewMessage from './components/NewMessage'
-import Login from './components/DeleteMessage'
+import DeleteMessage from './components/DeleteMessage'
 import ShowMessage from './components/ShowMessage'
 import './App.css';
 import Dummy from './components/DummyComponent';
+// import DeleteMessage from './components/DeleteMessage';
 
 function App(props) {
 
@@ -18,7 +19,7 @@ function App(props) {
             }} />
             <Route exact path='/delete' render = {(props) => {
                 return (
-                    <Login />
+                    <DeleteMessage />
                 )
             }} />
             <Route path='/message' render = {(props) => {

@@ -21,7 +21,7 @@ const ShowMessage = () => {
             .then((res) => res.json())
             .then((res) => {
                 console.log(res);
-                setMessage(res.result[0]);
+                setMessage(res.result);
                 console.log(res.result);
                 setPageLoaded(true)
             })
@@ -35,22 +35,22 @@ const ShowMessage = () => {
     return (
         <React.Fragment>
             {message && pageLoaded ?
-            <div className="container mt-3">
-                <h1>Message</h1>
-                <div className="text-center px-5 mx-5 mt-3">
-                    <h4>This is a creepy and secret message for you!!!</h4>
+            <div className="container mt-3 text-center bg-warning">
+                <h1 className="">Secret Message For You....</h1>
+                <div className="text-center uppercase px-5 mx-5 mt-3">
+                    <h4 className="uppercase">This is a creepy and secret message for you don't share it with anyone!!!</h4>
                 </div>
-                <div className="bg-warning border rounded text-center p-5 m-5">
+                <div className="bg-dark border rounded text-center text-white p-5 m-5">
                     <h3>{message}</h3>
                 </div>
                 <div className="text-center">
-                    <button className="btn btn-secondary" onClick={() => history.push('/')}>Create a Secret Message</button>
+                    <button className="btn btn-success" onClick={() => history.push('/')}>Create a New Secret Message</button>
                 </div>
             </div> :
             pageLoaded &&
             <div className="container mt-3">
             <h1>OOPS!!!</h1>
-            <div className="text-center px-5 mx-5 mt-3">
+            <div className="text-center text-white px-5 mx-5 mt-3">
                 <h4>The message has been deleted by the creator...</h4>
             </div>
         </div> 
